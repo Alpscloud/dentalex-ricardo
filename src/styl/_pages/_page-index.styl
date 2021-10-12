@@ -3,18 +3,21 @@
 	position relative
 	padding-top 110px
 	padding-bottom 220px
+	
+	
+.promo-block
+	position relative
 	&:before
 		pseudo()
 		width 2075px
 		height 1268px
 		position absolute
-		top -320px
-		left -470px
+		top -450px
+		right 240px
 		background url('../img/lines/promo.svg') 50% no-repeat / contain
 		z-index -1
-	
-.promo-block
-	position relative
+		opacity .3
+		
 	&__content
 		max-width 640px
 		
@@ -86,6 +89,14 @@
 	height 50px
 	z-index 1
 	border-radius 17.5px
+	box-shadow 0px 19px 44px rgba(0, 0, 0, 0.25)
+	&-lg
+		width 125px
+		height 125px
+	&-md
+		width 80px
+		height 80px
+		
 		
 .title
 	text-transform uppercase
@@ -122,7 +133,17 @@
 // Speaker
 .sect__speaker
 	padding-bottom 225px
-	background url('../img/lines/speaker.svg') top center no-repeat / contain
+	position relative
+	&:before
+		pseudo()
+		z-index -1
+		position absolute
+		top 0
+		vertical-center()
+		width 1830px
+		height 980px
+		background url('../img/lines/speaker.svg') top center no-repeat / auto
+		opacity .3
 	
 .speaker
 	margin-bottom 210px
@@ -137,6 +158,7 @@
 				background-color $basic-white-color
 				border-radius 15px
 				padding 20px 30px 20px 45px
+				@extends .shadow-block
 				&:before
 					pseudo()
 					position absolute
@@ -147,6 +169,7 @@
 					border-radius 50%
 					width 36px
 					height 36px
+					box-shadow 0px 19px 44px rgba(0, 0, 0, 0.25)
 				&:last-child
 					margin-bottom 0
 	&-photos
@@ -210,9 +233,9 @@
 		right 90px
 		border-radius 90px
 		background rgb(234,239,246)
-		background -moz-linear-gradient(150deg, rgba(213,215,244,1) 10%, rgba(214,216,244,0) 40%, rgba(234,239,245,1) 100%)
-		background -webkit-linear-gradient(150deg, rgba(213,215,244,1) 10%, rgba(214,216,244,0) 40%, rgba(234,239,245,1) 100%)
-		background linear-gradient(150deg, rgba(213,215,244,1) 10%, rgba(214,216,244,0) 40%, rgba(234,239,245,1) 100%)
+		background -moz-linear-gradient(150deg, rgba(213,215,244,1) 10%, rgba(255,255,255,1) 40%, rgba(234,239,245,1) 100%)
+		background -webkit-linear-gradient(150deg, rgba(213,215,244,1) 10%, rgba(255,255,255,1) 40%, rgba(234,239,245,1) 100%)
+		background linear-gradient(150deg, rgba(213,215,244,1) 10%, rgba(255,255,255,1) 40%, rgba(234,239,245,1) 100%)
 		&-main
 			width 480px
 			position absolute
@@ -224,20 +247,470 @@
 			
 		.decor-square
 			&:nth-child(1)
-				width 125px
-				height 125px
 				top -70px
 				right 110px
 			&:nth-child(2)
-				width 80px
-				height 80px
+				
 				top 55px
 				right -30px
 			&:nth-child(3)
 				left 130px
 				bottom -30px
 				
-.grad
-	width 400px
-	height 800px
-	outline 1px solid red
+// portfolio
+.sect__portfolio
+	padding-bottom 180px
+	
+.left-gutter
+	padding-left 160px
+	
+// Program
+
+	
+.program
+	padding-left 240px
+	position relative
+	&-progress
+		position absolute
+		width 2px
+		background-color #eff3f6
+		top 45px
+		right 100%
+		margin-right 153px
+		overflow hidden
+		bottom -88px
+		&__line
+			display block
+			position absolute
+			width 100%
+			height 100%
+			background-color $accent-color
+			top 0
+			
+	&-step
+		&:last-child
+			.program-progress
+				bottom -12px
+			
+			
+	
+			
+	
+	
+	&-step
+		margin-bottom 20px
+		border 12px solid $basic-white-color
+		border-radius 13px
+		
+		position relative
+		&:first-child
+			.program-progress
+				top 50px
+				&__line
+					top 0
+				
+		&.is-active
+			.program-step__count
+				span
+					box-shadow box-shadow 0px 19px 44px rgba(0, 0, 0, 0.25)
+					color $basic-white-color
+					background-color $accent-color
+		
+		&__notice
+			background-color $accent-color
+			position relative
+			color $basic-white-color
+			display inline-block
+			border-radius 11.5px
+			padding 18px 30px 18px 80px
+			margin-top 40px
+			box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
+			&:before
+				pseudo()
+				position absolute
+				vertical-center()
+				left 10px
+				border-radius 50%
+				background $basic-white-color url('../img/icons/svg/quote.svg') 50% no-repeat
+				width 48px
+				height 48px
+		
+		&__count
+			display flex
+			align-items center
+			justify-content flex-start
+			flex-wrap nowrap
+			position absolute
+			font 20px $SemiBold
+			transition all .17s ease-in-out
+			right 100%
+			margin-right 62px
+			top 43px
+			z-index 2
+			color #eff3f6
+			span
+				flex-col-center()
+				border-radius 50%
+				flex none
+				background-color #ebf0f5
+				text-align center
+				font-size 27px
+				color #b2c8d9
+				margin-right 20px
+				width 75px
+				height 75px
+				transition all .17s ease-in-out
+				
+			&.is-active
+				span
+					color $basic-white-color
+					background-color $accent-color
+		
+		&:last-child
+			margin-bottom 0
+			
+		&__content
+			
+			padding 70px 80px 50px 80px
+			position relative
+			background rgb(234,239,246)
+			background -moz-linear-gradient(150deg, rgba(213,215,244,.5) 10%, rgba(255,255,255,1) 40%, rgba(234,239,245,1) 100%)
+			background -webkit-linear-gradient(150deg, rgba(213,215,244,.5) 10%, rgba(255,255,255,1) 40%, rgba(234,239,245,1) 100%)
+			background linear-gradient(150deg, rgba(213,215,244,.5) 10%, rgba(255,255,255,1) 40%, rgba(234,239,245,1) 100%)
+			border-radius 4.5px
+			overflow hidden
+			&:before
+				pseudo()
+				position absolute
+				background url('../img/lines/program-step.svg') 50% no-repeat / contain
+				height 650px
+				width 2050px
+				left -250px
+				bottom -250px
+				opacity .3
+			
+		&__title
+			color $dark-text-color
+			font 20px $SemiBold
+			margin-bottom 50px
+			position relative
+			z-index 2
+			
+		&__list
+			
+			position relative
+			z-index 2
+			li
+				display block
+				padding-bottom 20px
+				margin-bottom 20px
+				border-bottom 1px solid #f2f5f9
+				padding-left 50px
+				color $dark-text-color
+				position relative
+				&:before
+					pseudo()
+					position absolute
+					top -1px
+					left 0
+					width 20px
+					height 20px
+					border-radius 50%
+					background $basic-white-color url('../img/icons/svg/plus.svg') 50% no-repeat / 7px
+					@extends .shadow-block
+				ul
+					padding-left 20px
+					padding-top 15px
+					
+					li
+						padding-bottom 0
+						margin-bottom 0
+						border-bottom none
+						padding-left 0
+						&:before
+							display none
+				&:last-child
+					margin-bottom 0
+					padding-bottom 0
+					border-bottom none
+					
+.program-step__gallery
+	margin-left -12px
+	margin-right -12px
+	margin-bottom -12px
+	border 12px solid $basic-white-color
+	border-radius 13px
+	display flex
+	flex-wrap nowrap
+	background-color $basic-white-color
+	&--item
+		flex none
+		width 25%
+		padding-left 12px
+		padding-right 12px
+		
+		.thumbnail
+			display block
+			border-radius 12px
+			padding-top 65%
+	
+.block
+	width 40px
+	height 0
+	background-color aqua
+	
+// sect form
+.sect__form-gallery
+	padding-bottom 140px
+	position relative
+	&:before
+		pseudo()
+		width 2075px
+		height 1270px
+		position absolute
+		bottom -130px
+		horisontal-center()
+		background url('../img/lines/gallery.svg') 50% no-repeat / contain
+		z-index -1
+		opacity .3
+	
+.form-gallery
+	&__row
+		margin-bottom 135px
+	&__form
+		position relative
+		padding-left 160px
+		padding-right 160px
+		&-img
+			width 470px
+			height 340px
+			position absolute
+			bottom 80px
+			right 80px
+			z-index -1
+			border-radius 90px 90px 7px 90px
+			.decor-square
+				left -30px
+				bottom 125px
+	&__title-col
+		max-width 535px
+		display flex
+		flex-wrap wrap
+		justify-content flex-end
+		
+		.sect-title
+			margin-bottom 125px
+			flex 1
+			
+	&__title-img
+		position relative
+		max-width 440px
+		img
+			display block
+			border-radius 60.7px
+			
+		.decor-square
+			right 45px
+			top -65px
+			
+	&__img-col
+		max-width 500px
+		margin-left 65px
+		position relative
+		img
+			display block
+			border 12px solid $basic-white-color
+			border-radius 7px 90px 7px 90px
+			
+		.decor-square
+			left 120px
+			bottom -25px
+			
+// Gallery
+.sect__gallery
+	padding-bottom 140px
+	
+.gallery
+	&__row
+		margin-left -15px
+		margin-right -15px
+		
+	&__col
+		width 75%
+		//padding-left 20px
+		//padding-right 20px
+		display flex
+		flex-wrap wrap
+		&:nth-child(3n+2),
+		&:nth-child(3n+3)
+			width 25%
+			
+			.gallery-item
+				padding-top 0
+				height 100%
+				
+			
+	&-item
+		padding-top 64%
+		&__wrapper
+			padding 15px
+			&.col-w-50
+				.gallery-item
+					padding-top 119%
+	
+// prices
+.sect__prices
+	position relative
+	&:before
+		pseudo()
+		width 2075px
+		height 1156px
+		position absolute
+		bottom 0
+		horisontal-center()
+		background url('../img/lines/prices.svg') 50% no-repeat / contain
+		z-index -1
+		opacity .3
+	
+.prices
+	padding-right 70px
+	&__col
+		width 315px
+		flex none
+		
+.price-block
+	border-radius 7px 90px 90px 90px
+	padding 45px 0 70px
+	background rgb(234,239,246) 
+	background -moz-linear-gradient(150deg, rgba(234,239,245,1) 10%, rgba(255,255,255,1) 40%, rgba(213,215,244,1) 100%)
+	background -webkit-linear-gradient(150deg, rgba(234,239,245,1) 10%, rgba(255,255,255,1) 40%, rgba(213,215,244,1) 100%)
+	background linear-gradient(150deg, rgba(234,239,245,1) 10%, rgba(255,255,255,1) 40%, rgba(213,215,244,1) 100%)
+	position relative
+	
+	.decor-square
+		&:nth-child(1)
+			right 120px
+			top -30px
+		&:nth-child(2)
+			right -20px
+			top -25px
+		&:nth-child(3)
+			left 80px
+			bottom -20px
+	
+	&__content
+		margin 0 auto
+		max-width 200px
+		ul
+			li
+				padding-left 40px
+				position relative
+				margin-bottom 16px
+				&:last-child
+					margin-bottom 0
+				&:before
+					pseudo()
+					position absolute
+					top -1px
+					left 0
+					width 20px
+					height 20px
+					border-radius 50%
+					background $basic-white-color url('../img/icons/svg/plus.svg') 50% no-repeat / 7px
+
+	
+	&__title
+		text-align center
+		display inline-block
+		background-color $basic-white-color
+		font 24px $SemiBold
+		color $accent-color
+		padding 22px 55px
+		border-radius 12px
+		margin-bottom 38px
+		margin-left -30px
+		position relative
+		z-index 1
+		
+.price
+	color $accent-color
+	width 100%
+	font 50px $SemiBold
+	white-space nowrap
+	margin-top 34px
+	
+.contacts
+	&__col
+		width 100%
+		max-width 630px
+		margin-left 30px
+		display flex
+		flex-direction column
+		
+		.contacts-block
+			flex 1
+		
+	&-block
+		border 12px solid $basic-white-color
+		border-radius 102px 102px 19px 102px
+		position relative
+
+		
+		
+		.price-block__title
+			position absolute
+			left -30px
+			margin-left 0
+			top 33px
+		
+		&__header
+			padding-top 33px
+			flex 1
+		
+
+		&__information
+			background rgb(234,239,246) 
+			background -moz-linear-gradient(150deg, rgba(244,245,253,1) 10%, rgba(255,255,255,1) 40%, rgba(249,251,252,1) 100%)
+			background -webkit-linear-gradient(150deg, rgba(244,245,253,1) 10%, rgba(255,255,255,1) 40%, rgba(249,251,252,1) 100%)
+			background linear-gradient(150deg, rgba(244,245,253,1) 10%, rgba(255,255,255,1) 40%, rgba(249,251,252,1) 100%)
+			padding 40px 40px 30px 
+	
+			border-radius 10px 10px 0 0
+			position relative
+			z-index 1
+			margin-top -15px
+			
+			.row
+				margin-left -40px
+				margin-right -40px
+				margin-bottom 32px
+			
+			&--col
+				padding-left 40px
+				padding-right 40px
+				text-transform uppercase
+				font 25px $SemiBold
+				color $basic-black-color
+				&_label
+					color #abbecf
+					font-size 14px
+					margin-bottom 10px
+				
+
+			
+
+
+			
+			
+		
+		&__content
+			overflow hidden
+			border-radius 90px 90px 10px 90px
+			height 100%
+			display flex
+			flex-direction column
+		&__img
+			flex 1
+			
+		
+		

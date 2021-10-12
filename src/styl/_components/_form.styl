@@ -3,15 +3,19 @@
 
 
 .form
-
+	&-title
+		color $dark-text-color
+		font 24px $Med
+		margin-bottom 50px
 	&__wrapper
 		background-color $basic-white-color
 		padding 20px
 		border-radius 22px
+		box-shadow 6px 11px 23px rgba(0, 0, 0, 0.08)
 	&-groups
 		display inline-flex
 		flex-wrap nowrap
-		width 66.66666%
+	
 		background-color $secondary-color
 		border-radius 13.7px
 		overflow hidden
@@ -25,7 +29,7 @@
 			
 	&-submit
 		padding-left 10px
-		width 33.33333%
+	
 		.btn
 			width 100%
 			padding-left 10px
