@@ -9,6 +9,11 @@
 	color $accent-color
 	min-width 280px
 	border-radius 29.5px
+	transition all .5s ease-in-out
+	opacity 0
+	&.is-animated
+		opacity 1
+		
 	&__ic
 		flex none
 		width 50px
@@ -16,5 +21,48 @@
 		display block
 		background $accent-color url('../img/icons/svg/location.svg') 50% no-repeat / 17px 24px
 		border-radius 17.5px
+		box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
 		margin-right 30px
+		
+
+.decor-lines
+	display block
+	z-index -1
+	position absolute
+	background-repeat no-repeat
+	background-size contain
+	background-position 50%
+	opacity .3
+
+
+.sect__speaker
+	.decor-lines
+		width 1830px
+		height 980px
+		top 0
+		left 50%
+		margin-left -915px
+		
+.sect__prices
+	.decor-lines
+		width 2075px
+		height 1156px
+		bottom -1100px
+		left 50%
+		margin-left -1037.5px
+		
+.sect__form-gallery
+	.decor-lines
+		width 2076px
+		height 1270px
+		bottom 650px
+		right -450px
+		
+	
+.sect__program
+	.decor-lines
+		width 2054px
+		height 650px
+		right -75%
+		top -460px
 		

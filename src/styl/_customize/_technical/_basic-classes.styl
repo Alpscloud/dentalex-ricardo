@@ -32,6 +32,20 @@
 	color $accent-color
 	font 26px $SemiBold
 	margin-bottom 20px
+	
+
+.sect-title,
+.sect-uptitle
+	span
+		display inline-block
+		transform translateY(-7px)
+		opacity 0
+		will-change transform
+		transition all .23s ease-in-out
+	&.is-animated
+		span
+			opacity 1
+			transform translateY(0)
 
 		
 .text-center

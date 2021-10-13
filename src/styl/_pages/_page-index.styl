@@ -23,6 +23,11 @@
 		
 		.form__wrapper
 			margin-bottom 70px
+			opacity 0
+			transition all .3s ease-in-out
+			transition-delay .3s
+			&.is-animated
+				opacity 1
 		
 		.city
 			margin-bottom 60px
@@ -39,6 +44,12 @@
 			overflow-hidden
 			width 100%
 			height 100%
+			transition all .3s ease-in-out
+			opacity 0
+			transform scale(0.95, 0.95)
+			&.is-animated
+				opacity 1
+				transform scale(1,1)
 			img
 				display block
 				width 100%
@@ -54,21 +65,33 @@
 			position absolute
 			z-index 1
 			object-fit cover
+			box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
+			transition all .3s ease-in-out
+			opacity 0
+			&.is-animated
+				opacity 1
+				animation flying 2s linear infinite
 			&:nth-child(1)
 				width 220px
 				height 220px
 				top -25px
 				left -80px
+				transition-delay 0s
+				animation-delay 0.15s
 			&:nth-child(2)
 				width 200px
 				height 200px
 				top 55px
 				right -60px
+				transition-delay 0.3s
+				animation-delay 0.3s
 			&:nth-child(3)
 				width 175px
 				height 175px
 				right 110px
 				bottom -45px
+				transition-delay 0.6s
+				animation-delay 0s
 				
 		.decor-square
 			&:nth-child(1)
@@ -89,14 +112,40 @@
 	height 50px
 	z-index 1
 	border-radius 17.5px
-	box-shadow 0px 19px 44px rgba(0, 0, 0, 0.25)
+	box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
+	transition all .5s ease-in-out
+	opacity 0
+	transform translateY(-20px)
+	
+	&:nth-child(1)
+		transition-delay 0 !important
+		animation-delay 0 !important
+	&:nth-child(2)
+		transition-delay .2s !important
+		animation-delay .2s !important
+		
+	&:nth-child(3)
+		transition-delay .4s !important
+		animation-delay .4s !important
+	
+	&.is-animated
+		opacity 1
+		animation flying 2s linear infinite
 	&-lg
 		width 125px
 		height 125px
 	&-md
 		width 80px
 		height 80px
-		
+
+
+@keyframes flying 
+	0%
+		transform translateY(-10px)
+	50%
+		transform translateY(0)
+	100%
+		transform translateY(-10px)	
 		
 .title
 	text-transform uppercase
@@ -104,8 +153,16 @@
 	font 50px $Bold
 	line-height 1
 	margin-bottom 40px
+	&.is-animated
+		span
+			opacity 1
+			transform translateY(0)
 	span
-		color $accent-color
+		opacity 0
+		transition all .3s ease-in-out
+		transform translateY(-7px)
+		display inline-block
+		
 	
 	i
 		font 20px $SemiBold
@@ -124,6 +181,13 @@
 		font 20px $SemiBold
 		padding-left 50px
 		padding-right 50px
+		opacity 0
+		transition all .3s ease-in-out
+		transition-delay .3s
+		&:last-child
+			transition-delay .6s
+		&.is-animated
+			opacity 1
 		&--label
 			color $text-color
 			font 16px $Med
@@ -134,16 +198,7 @@
 .sect__speaker
 	padding-bottom 225px
 	position relative
-	&:before
-		pseudo()
-		z-index -1
-		position absolute
-		top 0
-		vertical-center()
-		width 1830px
-		height 980px
-		background url('../img/lines/speaker.svg') top center no-repeat / auto
-		opacity .3
+
 	
 .speaker
 	margin-bottom 210px
@@ -152,6 +207,10 @@
 		max-width 530px
 		margin-left 60px
 		&__list
+			&.is-animated
+				li
+					transform translateY(0)
+					opacity 1
 			li
 				position relative
 				margin-bottom 20px
@@ -159,6 +218,9 @@
 				border-radius 15px
 				padding 20px 30px 20px 45px
 				@extends .shadow-block
+				transform translateY(-6px)
+				opacity 0
+				transition all .3s ease-in-out
 				&:before
 					pseudo()
 					position absolute
@@ -169,7 +231,7 @@
 					border-radius 50%
 					width 36px
 					height 36px
-					box-shadow 0px 19px 44px rgba(0, 0, 0, 0.25)
+					box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
 				&:last-child
 					margin-bottom 0
 	&-photos
@@ -188,6 +250,10 @@
 		padding-left 17.5px
 		padding-right 17.5px
 		margin-bottom 35px
+		opacity 0
+		transition all .3s ease-in-out
+		&.is-animated
+			opacity 1
 		&:last-child
 			margin-bottom 0
 		img
@@ -195,12 +261,15 @@
 			width 100%
 			
 		&:nth-child(1)
+			
 			img
 				border-radius 7px 90px 7px 90px
 		&:nth-child(2)
+			transition-delay .3s
 			img
 				border-radius 60.7px
 		&:nth-child(3)
+			transition-delay .6s
 			img
 				border-radius 7px 7px 90px 90px
 				
@@ -265,11 +334,14 @@
 	padding-left 160px
 	
 // Program
-
+.sect__program
+	position relative
 	
 .program
 	padding-left 240px
 	position relative
+	&-steps
+		background-color $basic-white-color
 	&-progress
 		position absolute
 		width 2px
@@ -303,6 +375,8 @@
 		border-radius 13px
 		
 		position relative
+		&__wrapper
+			overflow hidden
 		&:first-child
 			.program-progress
 				top 50px
@@ -312,7 +386,7 @@
 		&.is-active
 			.program-step__count
 				span
-					box-shadow box-shadow 0px 19px 44px rgba(0, 0, 0, 0.25)
+					box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
 					color $basic-white-color
 					background-color $accent-color
 		
@@ -361,10 +435,12 @@
 				height 75px
 				transition all .17s ease-in-out
 				
+				
 			&.is-active
 				span
 					color $basic-white-color
 					background-color $accent-color
+					box-shadow 0px 10px 30px rgba(39, 70, 207, 0.55)
 		
 		&:last-child
 			margin-bottom 0
@@ -435,8 +511,8 @@
 					border-bottom none
 					
 .program-step__gallery
-	margin-left -12px
-	margin-right -12px
+	margin-left -24px
+	margin-right -24px
 	margin-bottom -12px
 	border 12px solid $basic-white-color
 	border-radius 13px
@@ -463,16 +539,8 @@
 .sect__form-gallery
 	padding-bottom 140px
 	position relative
-	&:before
-		pseudo()
-		width 2075px
-		height 1270px
-		position absolute
-		bottom -130px
-		horisontal-center()
-		background url('../img/lines/gallery.svg') 50% no-repeat / contain
-		z-index -1
-		opacity .3
+	
+		
 	
 .form-gallery
 	&__row
@@ -481,6 +549,7 @@
 		position relative
 		padding-left 160px
 		padding-right 160px
+		z-index 1
 		&-img
 			width 470px
 			height 340px
@@ -552,6 +621,12 @@
 			
 	&-item
 		padding-top 64%
+		opacity 0
+		transform translateY(-7px)
+		transition all .3s ease-in-out
+		&.is-animated
+			opacity 1
+			transform translateY(0)
 		&__wrapper
 			padding 15px
 			&.col-w-50
@@ -561,16 +636,7 @@
 // prices
 .sect__prices
 	position relative
-	&:before
-		pseudo()
-		width 2075px
-		height 1156px
-		position absolute
-		bottom 0
-		horisontal-center()
-		background url('../img/lines/prices.svg') 50% no-repeat / contain
-		z-index -1
-		opacity .3
+	
 	
 .prices
 	padding-right 70px
