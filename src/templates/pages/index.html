@@ -14,27 +14,29 @@
 				<div class="container">
 					<div class="promo-block">
 						<div class="promo-block__content">
-							<div class="city">
-								<span class="city__ic"></span>
-								<span>EN TIJUANA</span>
+							<div class="hidden-mobile">
+								<div class="city">
+									<span class="city__ic"></span>
+									<span>EN TIJUANA</span>
+								</div>
 							</div>
 
 							<h1 class="title"><i><span>CURSO</span> <span>RICARDO</span> <span>KERN</span></i> <span class="accent-color">TEJIDO</span> <span>BLANDO</span><br><span>Y AUMENTO OSEO</span></h1>
 
-							<div class="form__wrapper shadow-block">
+							<div class="form__wrapper shadow-block hidden-mobile">
 								<form class="form">
 									<!-- Hidden inputs -->
-									<input type="hidden" name="project_name" value="Curso Ricardo Kern">
-									<input type="hidden" name="admin_email" value="email@email">
+									<input type="hidden" name="project_name" value="Dentalex. CURSO RICARDO KERN">
+									<input type="hidden" name="form_subject" value="Принять участие">
 									<!-- // Hidden inputs -->
 
 									<div class="form__row row row-nowrap">
 										<div class="form-groups col-w-66">
 											<div class="form-group">
-												<input type="text" placeholder="Nombre" name="name" class="form-input js-required-input">
+												<input type="text" placeholder="Nombre" name="name" class="form-input js-required-input" required>
 											</div>
 											<div class="form-group">
-												<input type="tel" placeholder="Teléfono" name="tel" class="form-input js-required-input">
+												<input type="tel" placeholder="Teléfono" name="tel" class="form-input js-required-input" required>
 											</div>
 										</div>
 										<div class="form-submit col-w-33">
@@ -43,6 +45,12 @@
 									</div>
 								</form>
 							</div>
+
+							<div class="hidden-desktop visible-mobile mobile-btn">
+								<button class="btn btn-default js-open-popup-form-btn " type="button">Enviar</button>
+							</div>
+
+
 
 							<div class="course-info">
 								<div class="course-info__item">
@@ -53,6 +61,13 @@
 								<div class="course-info__item">
 									<p class="course-info__item--label">Nombre del lugar:</p>
 									<p class="course-info__item--value">Nombre del lugar</p>
+								</div>
+							</div>
+
+							<div class="hidden-desktop visible-mobile">
+								<div class="city">
+									<span class="city__ic"></span>
+									<span>EN TIJUANA</span>
 								</div>
 							</div>
 						</div>
@@ -83,7 +98,7 @@
 			</section>
 			<!-- //promo -->
 
-			<section class="sect__speaker">
+			<section class="sect__speaker" id="speaker">
 				<div class="container">
 					<div class="speaker">
 						<div class="row align-horisontal-betwee align-vertical-start speaker__row row-nowrap">
@@ -102,13 +117,13 @@
 							</div>
 							<div class="speaker-photos">
 								<div class="speaker-photo js-animation-block">
-									<img src="img/img.png" alt="">
+									<img src="img/speaker/sp1.jpg" alt="">
 								</div>
 								<div class="speaker-photo js-animation-block">
-									<img src="img/img.png" alt="">
+									<img src="img/speaker/sp2.jpg" alt="">
 								</div>
 								<div class="speaker-photo js-animation-block">
-									<img src="img/img.png" alt="">
+									<img src="img/speaker/sp3.jpg" alt="">
 								</div>
 							</div>
 						</div>
@@ -123,17 +138,17 @@
 							<div class="form__wrapper shadow-block">
 								<form class="form">
 									<!-- Hidden inputs -->
-									<input type="hidden" name="project_name" value="Curso Ricardo Kern">
-									<input type="hidden" name="admin_email" value="email@email">
+									<input type="hidden" name="project_name" value="Dentalex. CURSO RICARDO KERN">
+									<input type="hidden" name="form_subject" value="Принять участие">
 									<!-- // Hidden inputs -->
 
 									<div class="form__row row row-nowrap">
 										<div class="form-groups col-w-75">
 											<div class="form-group">
-												<input type="text" placeholder="Nombre" name="name" class="form-input js-required-input">
+												<input type="text" placeholder="Nombre" name="name" class="form-input js-required-input" required>
 											</div>
 											<div class="form-group">
-												<input type="tel" placeholder="Teléfono" name="tel" class="form-input js-required-input">
+												<input type="tel" placeholder="Teléfono" name="tel" class="form-input js-required-input" required>
 											</div>
 											<div class="form-group">
 												<input type="email" placeholder="e-mail" name="email" class="form-input">
@@ -169,7 +184,7 @@
 			</section>
 			<!-- //sect speaker -->
 
-			<section class="sect__portfolio">
+			<section class="sect__portfolio" id="portfolio">
 				<div class="container">
 					<h2 class="left-gutter sect-title js-animation-block"><span class="accent-color">Ejemplos</span> <span>del trabajo</span><br> <span>del hablante</span></h2>
 
@@ -179,13 +194,21 @@
 							<div class="portfolio-slider__thumbnails">
 								<div class="js-portfolio-thumbnails">
 
-									<div class="portfolio-thumbnail bg" style="background-image: url('img/portfolio/1.png');"></div>
+									<div class="portfolio-thumbnail" >
+										<div class="bg" style="background-image: url('img/portfolio/1.png');"></div>
+									</div>
 
-									<div class="portfolio-thumbnail bg" style="background-image: url('img/portfolio/1.png');"></div>
+									<div class="portfolio-thumbnail">
+										<div class="bg" style="background-image: url('img/portfolio/1.png');"></div>
+									</div>
 
-									<div class="portfolio-thumbnail bg" style="background-image: url('img/portfolio/1.png');"></div>
+									<div class="portfolio-thumbnail">
+										<div class="bg" style="background-image: url('img/portfolio/1.png');"></div>
+									</div>
 
-									<div class="portfolio-thumbnail bg" style="background-image: url('img/portfolio/1.png');"></div>
+									<div class="portfolio-thumbnail">
+										<div class="bg" style="background-image: url('img/portfolio/1.png');"></div>
+									</div>
 
 								</div>
 							</div>
@@ -243,8 +266,8 @@
 									</svg>
 								</button>
 							</div>
-							<span class="portfolio-slider__navigation--divider"></span>
-							<span class="portfolio-slider__navigation--text">Haga clic en el botón para ver más obras</span>
+							<span class="portfolio-slider__navigation--divider hidden-mobile"></span>
+							<span class="portfolio-slider__navigation--text hidden-mobile">Haga clic en el botón para ver más obras</span>
 						</div>
 					</div>
 				</div>
@@ -252,7 +275,7 @@
 			</section>
 			<!-- //sect portfolio -->
 
-			<section class="sect__program gutter-bottom decor-bg">
+			<section class="sect__program gutter-bottom decor-bg" id="program">
 				<h2 class="text-center container sect-title js-animation-block"><span>Programa</span></h2>
 
 				<div class="container">
@@ -445,10 +468,10 @@
 			</section>
 			<!-- //sect program -->
 
-			<section class="sect__form-gallery">
+			<section class="sect__form-gallery gutter-bottom" >
 				<div class="container">
 					<div class="form-gallery">
-						<div class="form-gallery__row row align-vertical-start">
+						<div class="form-gallery__row row align-vertical-start row-nowrap">
 							<div class="form-gallery__title-col">
 								<h2 class="js-animation-block sect-title sect-title-sm"><span class="accent-color">Titular sobre</span> <span>la experiencia</span><br> <span>que las personas obtienen</span><br> <span>en la conferencia.</span></h2>
 								<div class="form-gallery__title-img">
@@ -471,17 +494,17 @@
 
 								<form class="form">
 									<!-- Hidden inputs -->
-									<input type="hidden" name="project_name" value="Curso Ricardo Kern">
-									<input type="hidden" name="admin_email" value="email@email">
+									<input type="hidden" name="project_name" value="Dentalex. CURSO RICARDO KERN">
+									<input type="hidden" name="form_subject" value="Принять участие">
 									<!-- // Hidden inputs -->
 
 									<div class="form__row row row-nowrap">
 										<div class="form-groups col-w-75">
 											<div class="form-group">
-												<input type="text" placeholder="Nombre" name="name" class="form-input js-required-input">
+												<input type="text" placeholder="Nombre" name="name" class="form-input js-required-input" required>
 											</div>
 											<div class="form-group">
-												<input type="tel" placeholder="Teléfono" name="tel" class="form-input js-required-input">
+												<input type="tel" placeholder="Teléfono" name="tel" class="form-input js-required-input" required>
 											</div>
 											<div class="form-group">
 												<input type="email" placeholder="e-mail" name="email" class="form-input">
@@ -510,7 +533,7 @@
 			</section>
 			<!-- //sect form -->
 
-			<section class="sect__gallery gutter-bottom">
+			<section class="sect__gallery gutter-bottom" id="gallery">
 				<h2 class="sect-title js-animation-block text-center container"><span>¿Cómo fueron</span> <span>nuestros</span><br> <span>eventos pasados?</span></h2>
 				<div class="container">
 					<div class="gallery">
@@ -584,7 +607,7 @@
 			<!-- //sect gallery -->
 
 
-			<section class="sect__prices gutter-bottom">
+			<section class="sect__prices gutter-bottom" id="prices">
 				<div class="container">
 					<div class="prices">
 						<div class="row prices__row align-horisontal-between">
@@ -657,6 +680,7 @@
 		{% include '../parts/sections/footer.html' %}
 		<!-- //Footer -->
 
+		{% include '../parts/components/popups.html' %}
 		{% include '../parts/components/preloader.html' %}
 
 	</div>
